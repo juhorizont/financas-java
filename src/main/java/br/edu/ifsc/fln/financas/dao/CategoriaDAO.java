@@ -6,8 +6,9 @@ import br.edu.ifsc.fln.financas.model.Grupo;
 import java.util.ArrayList;
 import java.util.List;
 
-// DAO da Categoria: guarda as categorias em memoria e permite inserir e listar.
-// Ja comeca com as categorias fixas do sistema
+// DAO da Categoria: guarda as categorias em memoria e permite inserir e listar
+// já começa com as categorias fixas do sistema
+
 public class CategoriaDAO {
     private List<Categoria> categorias = new ArrayList<>();
     private int proximoId = 1;
@@ -15,13 +16,13 @@ public class CategoriaDAO {
     public CategoriaDAO() {
         // Necessidades
         inserir(new Categoria(0, "Moradia", Grupo.NECESSIDADE));
-        inserir(new Categoria(0, "Alimentacao", Grupo.NECESSIDADE));
+        inserir(new Categoria(0, "Alimentação", Grupo.NECESSIDADE));
         inserir(new Categoria(0, "Transporte", Grupo.NECESSIDADE));
-        inserir(new Categoria(0, "Saude", Grupo.NECESSIDADE));
+        inserir(new Categoria(0, "Saúde", Grupo.NECESSIDADE));
         inserir(new Categoria(0, "Água", Grupo.NECESSIDADE));
         inserir(new Categoria(0, "Luz", Grupo.NECESSIDADE));
         inserir(new Categoria(0, "Internet", Grupo.NECESSIDADE));
-        inserir(new Categoria(0, "Educacao", Grupo.NECESSIDADE));
+        inserir(new Categoria(0, "Educação", Grupo.NECESSIDADE));
         inserir(new Categoria(0, "Cartão de Crédito", Grupo.NECESSIDADE));
         inserir(new Categoria(0, "Boleto", Grupo.NECESSIDADE));
         inserir(new Categoria(0, "Academia", Grupo.NECESSIDADE));
@@ -41,10 +42,6 @@ public class CategoriaDAO {
         inserir(new Categoria(0, "Jogos", Grupo.DESEJO));
         inserir(new Categoria(0, "Presentes", Grupo.DESEJO));
 
-
-        // Economia
-        inserir(new Categoria(0, "Reserva de emergencia", Grupo.ECONOMIA));
-        inserir(new Categoria(0, "Guardar para meta", Grupo.ECONOMIA));
     }
 
     public void inserir(Categoria categoria) {
