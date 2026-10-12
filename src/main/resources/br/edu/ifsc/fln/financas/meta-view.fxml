@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="517.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+   <children>
+      <Label layoutX="286.0" layoutY="41.0" text="Metas" />
+      <TextField fx:id="tfObjetivo" layoutX="226.0" layoutY="74.0" promptText="Objetivo" />
+      <TextField fx:id="tfValorAlvo" layoutX="227.0" layoutY="116.0" promptText="Valor alvo" />
+      <TextField fx:id="tfPrazo" layoutX="226.0" layoutY="161.0" promptText="Prazo em meses" />
+      <Button fx:id="btSalvarMeta" layoutX="258.0" layoutY="449.0" mnemonicParsing="false" onAction="#onSalvarMeta" text="Salvar metas" />
+      <ListView fx:id="lvListaMetas" layoutX="202.0" layoutY="233.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="262.0" layoutY="202.0" text="Lista de metas" />
+   </children>
 </AnchorPane>

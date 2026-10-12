@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="406.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+   <children>
+      <Label layoutX="275.0" layoutY="58.0" text="Despesas" />
+      <TextField fx:id="tfDescricao" layoutX="221.0" layoutY="95.0" prefHeight="26.0" prefWidth="159.0" promptText="Descrição" />
+      <TextField fx:id="tfValorDespesa" layoutX="221.0" layoutY="141.0" prefHeight="26.0" prefWidth="159.0" promptText="Valor" />
+      <DatePicker fx:id="dpDataDespesa" layoutX="220.0" layoutY="186.0" prefHeight="26.0" prefWidth="159.0" promptText="Data da despesa" />
+      <ComboBox fx:id="tfCategoria" layoutX="221.0" layoutY="237.0" prefHeight="26.0" prefWidth="159.0" promptText="Categoria" />
+      <ComboBox fx:id="tfStatus" layoutX="220.0" layoutY="283.0" prefHeight="26.0" prefWidth="159.0" promptText="Status de pagamento" />
+      <Button fx:id="btSalvarDespesa" layoutX="246.0" layoutY="330.0" mnemonicParsing="false" onAction="#onSalvarDespesa" text="Salvar despesas" />
+      <ListView fx:id="lvDespesas" layoutX="398.0" layoutY="95.0" prefHeight="263.0" prefWidth="188.0" />
+      <Label layoutX="446.0" layoutY="58.0" text="Lista de despesas" />
+   </children>
 </AnchorPane>

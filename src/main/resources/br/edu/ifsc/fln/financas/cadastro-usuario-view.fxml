@@ -3,16 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
     <children>
         <Label layoutX="247.0" layoutY="52.0" text="Cadastro de usuário" />
-        <Label layoutX="233.0" layoutY="48.0" text="Cadastro de usuário" />
         <TextField fx:id="tfNome" layoutX="225.0" layoutY="91.0" promptText="Nome:" />
         <TextField fx:id="tfCpf" layoutX="225.0" layoutY="132.0" promptText="CPF:" />
-        <TextField />
         <TextField fx:id="tfRenda" layoutX="225.0" layoutY="174.0" promptText="Renda fixa:" />
         <Button fx:id="btCadastrar" layoutX="266.0" layoutY="215.0" mnemonicParsing="false" onAction="#onCadastrar" text="Cadastrar" textFill="#020800" />
-        <Label fx:id="lblMensagem" layoutX="214.0" layoutY="266.0" text="Cadastro realizado com sucesso!" />
+        <Label fx:id="lblMensagem" layoutX="225.0" layoutY="266.0" text="Cadastro realizado com sucesso!" />
     </children>
 </AnchorPane>
