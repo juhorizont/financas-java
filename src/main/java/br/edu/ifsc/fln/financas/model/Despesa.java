@@ -2,24 +2,25 @@ package br.edu.ifsc.fln.financas.model;
 
 import java.time.LocalDate;
 
-
+// Classe Despesa: um gasto individual, com valor, data, categoria e situacao (status)
 public class Despesa {
     private int id;
     private String descricao;
     private double valor;
     private LocalDate data;
     private Categoria categoria;
+    private StatusDespesa status;
 
     public Despesa() {
-        //tinha esquecido desse construtor vazio
     }
 
-    public Despesa(int id, String descricao, double valor, LocalDate data, Categoria categoria) {
+    public Despesa(int id, String descricao, double valor, LocalDate data, Categoria categoria, StatusDespesa status) {
         this.id = id;
         this.descricao = descricao;
         this.valor = valor;
         this.data = data;
         this.categoria = categoria;
+        this.status = status;
     }
 
     public int getId() {
@@ -60,5 +61,13 @@ public class Despesa {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public StatusDespesa getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusDespesa status) {
+        this.status = status;
     }
 }

@@ -1,5 +1,8 @@
 package br.edu.ifsc.fln.financas.model;
 
+// A categoria diz para qual grupo vai a despesa
+// Categoria fixa = Categoria Mercado.
+
 public class Categoria {
 
     private int id;
