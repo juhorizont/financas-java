@@ -38,6 +38,7 @@ public class DashboardController {
 
         lblRendaTotal.setText("Renda total: R$ " + usuario.calcularTotalReceitas());
 
+        // total gasto x renda: diz se sobrou ou se passou
         double sobraTotal = usuario.calcularSobra();
         if (sobraTotal >= 0) {
             lblTotalGasto.setText("Total gasto: R$ " + usuario.calcularTotalDespesas() + " (sobrou R$ " + sobraTotal + ")");
@@ -46,30 +47,35 @@ public class DashboardController {
             lblTotalGasto.setStyle("-fx-text-fill: red;");
         }
 
-        double limiteNec = usuario.calcularLimiteDoGrupo(Grupo.NECESSIDADE);
-        double gastoNec = usuario.calcularGastoDoGrupo(Grupo.NECESSIDADE);
+        // ----- necessidades -----
+        double limiteNec = usuario.calcularLimiteDoGrupo(Grupo.NECESSIDADE); // quanto pode gastar
+        double gastoNec = usuario.calcularGastoDoGrupo(Grupo.NECESSIDADE); // quanto ja gastou
         lbValorNecessidades.setText("Necessidades: gastou R$ " + gastoNec + " de R$ " + limiteNec);
-        pbNecessidades.setProgress(limiteNec > 0 ? gastoNec / limiteNec : 0);
+        pbNecessidades.setProgress(gastoNec / limiteNec);    // enche a barra (gasto dividido pelo limite)
         if (gastoNec > limiteNec) {
-            lbValorNecessidades.setStyle("-fx-text-fill: red;");
+            lbValorNecessidades.setStyle("-fx-text-fill: red;");   // passou do limite: pinta de vermelho
             pbNecessidades.setStyle("-fx-accent: red;");
         }
 
-        double limiteDes = usuario.calcularLimiteDoGrupo(Grupo.DESEJO);
-        double gastoDes = usuario.calcularGastoDoGrupo(Grupo.DESEJO);
+
+        // ----- desejos -----
+        double limiteDes = usuario.calcularLimiteDoGrupo(Grupo.DESEJO); // quanto pode gastar
+        double gastoDes = usuario.calcularGastoDoGrupo(Grupo.DESEJO); // quanto ja gastou
         lbValorDesejos.setText("Desejos: gastou R$ " + gastoDes + " de R$ " + limiteDes);
-        pbDesejos.setProgress(limiteDes > 0 ? gastoDes / limiteDes : 0);
+        pbDesejos.setProgress(gastoDes / limiteDes);    // enche a barra (gasto dividido pelo limite)
         if (gastoDes > limiteDes) {
-            lbValorDesejos.setStyle("-fx-text-fill: red;");
+            lbValorDesejos.setStyle("-fx-text-fill: red;");   // passou do limite: pinta de vermelho
             pbDesejos.setStyle("-fx-accent: red;");
         }
 
+
+        // ----- economia (aqui olha o que sobrou, nao o gasto) -----
         double limiteEco = usuario.calcularLimiteDoGrupo(Grupo.ECONOMIA);
         double sobra = usuario.calcularSobra();
         lbValorEconomias.setText("Economia: sobrou R$ " + sobra + " de R$ " + limiteEco);
-        pbEconomia.setProgress(limiteEco > 0 ? Math.max(0, sobra / limiteEco) : 0);
+        pbEconomia.setProgress(Math.max(0, sobra / limiteEco));
         if (sobra < limiteEco) {
-            lbValorEconomias.setStyle("-fx-text-fill: red;");
+            lbValorEconomias.setStyle("-fx-text-fill: red;");    // guardou menos que a meta: vermelho
             pbEconomia.setStyle("-fx-accent: red;");
         }
 
