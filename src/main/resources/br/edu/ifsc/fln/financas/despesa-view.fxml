@@ -3,16 +3,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="406.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="378.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsc.fln.financas.controller.DespesaController">
    <children>
-      <Label layoutX="275.0" layoutY="58.0" text="Despesas" />
-      <TextField fx:id="tfDescricao" layoutX="221.0" layoutY="95.0" prefHeight="26.0" prefWidth="159.0" promptText="Descrição" />
-      <TextField fx:id="tfValorDespesa" layoutX="221.0" layoutY="141.0" prefHeight="26.0" prefWidth="159.0" promptText="Valor" />
-      <DatePicker fx:id="dpDataDespesa" layoutX="220.0" layoutY="186.0" prefHeight="26.0" prefWidth="159.0" promptText="Data da despesa" />
-      <ComboBox fx:id="tfCategoria" layoutX="221.0" layoutY="237.0" prefHeight="26.0" prefWidth="159.0" promptText="Categoria" />
-      <ComboBox fx:id="tfStatus" layoutX="220.0" layoutY="283.0" prefHeight="26.0" prefWidth="159.0" promptText="Status de pagamento" />
-      <Button fx:id="btSalvarDespesa" layoutX="246.0" layoutY="330.0" mnemonicParsing="false" onAction="#onSalvarDespesa" text="Salvar despesas" />
-      <ListView fx:id="lvDespesas" layoutX="398.0" layoutY="95.0" prefHeight="263.0" prefWidth="188.0" />
-      <Label layoutX="446.0" layoutY="58.0" text="Lista de despesas" />
+      <Label layoutX="166.0" layoutY="35.0" text="Despesas" />
+      <TextField fx:id="tfDescricao" layoutX="112.0" layoutY="72.0" prefHeight="26.0" prefWidth="159.0" promptText="Descrição" />
+      <TextField fx:id="tfValorDespesa" layoutX="112.0" layoutY="118.0" prefHeight="26.0" prefWidth="159.0" promptText="Valor" />
+      <DatePicker fx:id="dpDataDespesa" layoutX="111.0" layoutY="163.0" prefHeight="26.0" prefWidth="159.0" promptText="Data da despesa" />
+      <ComboBox fx:id="cbCategoria" layoutX="112.0" layoutY="214.0" prefHeight="26.0" prefWidth="159.0" promptText="Categoria" />
+      <ComboBox fx:id="cbStatus" layoutX="111.0" layoutY="260.0" prefHeight="26.0" prefWidth="159.0" promptText="Status de pagamento" />
+      <Button fx:id="btSalvarDespesa" layoutX="141.0" layoutY="313.0" mnemonicParsing="false" onAction="#onSalvarDespesa" text="Salvar despesas" />
+      <ListView fx:id="lvDespesas" layoutX="320.0" layoutY="50.0" prefHeight="263.0" prefWidth="263.0" />
+      <Label layoutX="406.0" layoutY="27.0" text="Lista de despesas" />
+      <Label fx:id="lblTotalDespesas" layoutX="320.0" layoutY="317.0" text="Total das despesas: R$ 0.00" />
+      <Button fx:id="btVoltar" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onVoltar" text="Voltar home" />
    </children>
 </AnchorPane>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="15.0" prefHeight="400.0" prefWidth="600.0"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="br.edu.ifsc.fln.financas.controller.EntradaController">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <children>
+        <Label text="Financas Pessoais - Metodo 50/30/20" />
+        <Label text="Organize sua renda de forma simples." />
+        <Button fx:id="btCadastrar" text="Cadastrar" onAction="#onCadastrar" />
+    </children>
+</VBox>

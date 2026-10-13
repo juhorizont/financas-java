@@ -10,7 +10,7 @@
       <Label fx:id="lblSaldoAtual" layoutX="221.0" layoutY="160.0" text="Saldo atual:" />
       <TextField fx:id="tfValorDeposito" layoutX="222.0" layoutY="187.0" promptText="Valor de depósito" />
       <Button fx:id="btDepositar" layoutX="378.0" layoutY="187.0" mnemonicParsing="false" onAction="#onDepositar" text="Depositar" />
-      <Button fx:id="tfRetirar" layoutX="377.0" layoutY="227.0" mnemonicParsing="false" onAction="#onRetirar" prefHeight="26.0" prefWidth="67.0" text="Retirar" />
+      <Button fx:id="btRetirar" layoutX="377.0" layoutY="227.0" mnemonicParsing="false" onAction="#onRetirar" prefHeight="26.0" prefWidth="67.0" text="Retirar" />
       <TextField fx:id="tfValorRetirada" layoutX="222.0" layoutY="227.0" promptText="Valor de retirada" />
    </children>
 </AnchorPane>

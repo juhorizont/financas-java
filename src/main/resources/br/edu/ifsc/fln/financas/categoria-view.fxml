@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="485.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="485.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsc.fln.financas.controller.CategoriaController">
    <children>
       <Label layoutX="261.0" layoutY="27.0" text="Criar categoria" />
       <TextField fx:id="tfNomeCategoria" layoutX="225.0" layoutY="66.0" promptText="Nome da categoria" />
@@ -11,5 +11,6 @@
       <Button fx:id="btSalvar" layoutX="276.0" layoutY="405.0" mnemonicParsing="false" onAction="#onSalvar" text="Salvar" />
       <ListView fx:id="lvListaCategoria" layoutX="200.0" layoutY="178.0" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="251.0" layoutY="147.0" text="Lista de categorias" />
+      <Button fx:id="btVoltar" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#onVoltar" text="Voltar home" />
    </children>
 </AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="470.0" prefWidth="600.0" spacing="12.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsc.fln.financas.controller.HomeController">
+    <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
+    <children>
+        <Label text="Painel Principal" />
+        <Label fx:id="lblBemVindo" text="" />
+        <Button fx:id="btPainel" onAction="#onPainel" prefWidth="240" text="Ver painel do mes" />
+        <Button fx:id="btDespesas" onAction="#onDespesas" prefWidth="240" text="Despesas (Lançar e Ver)" />
+        <Button fx:id="btReceitas" onAction="#onReceitas" prefWidth="240" text="Adicionar Renda" />
+        <Button fx:id="btCategorias" onAction="#onCategorias" prefWidth="240" text="Categorias" />
+        <Button fx:id="btMetas" onAction="#onMetas" prefWidth="240" text="Metas (Ver e Cadastrar)" />
+        <Button fx:id="btCaixinhas" onAction="#onCaixinhas" prefWidth="240" text="Caixinhas (Ver e Criar)" />
+    </children>
+</VBox>

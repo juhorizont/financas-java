@@ -3,15 +3,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane fx:id="dpData" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="623.0" prefWidth="614.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsc.fln.financas.controller.ReceitaController">
    <children>
       <Label layoutX="271.0" layoutY="52.0" text="Receitas" />
       <TextField fx:id="tfNomeRenda" layoutX="225.0" layoutY="91.0" promptText="Nome da renda" />
       <TextField fx:id="tfValorRenda" layoutX="225.0" layoutY="141.0" promptText="Valor da renda" />
-      <DatePicker layoutX="227.0" layoutY="187.0" prefHeight="26.0" prefWidth="150.0" />
-      <ComboBox fx:id="cbTipo" layoutX="227.0" layoutY="238.0" prefWidth="150.0" promptText="Selecione tipo" />
-      <Button fx:id="btSalvarReceita" layoutX="267.0" layoutY="342.0" mnemonicParsing="false" onAction="#onSalvarReceita" text="Salvar" />
-      <ComboBox fx:id="cbGrupo" layoutX="227.0" layoutY="280.0" prefWidth="150.0" promptText="Selecione grupo" />
+      <DatePicker fx:id="dpDataReceita" layoutX="227.0" layoutY="187.0" prefHeight="26.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbTipo" layoutX="227.0" layoutY="225.0" prefWidth="150.0" promptText="Selecione tipo" />
+      <Button fx:id="btSalvarReceita" layoutX="282.0" layoutY="575.0" mnemonicParsing="false" onAction="#onSalvarReceita" text="Salvar" />
+      <ComboBox fx:id="cbGrupo" layoutX="227.0" layoutY="267.0" prefWidth="150.0" promptText="Selecione grupo" />
+      <ListView fx:id="lvReceitas" layoutX="207.0" layoutY="337.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="264.0" layoutY="308.0" text="Lista de Rendas" />
+      <Button fx:id="btVoltar" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#onVoltar" text="Voltar home" />
+      <Label fx:id="lblTotalRendas" layoutX="205.0" layoutY="543.0" text="Total das rendas: R$ 0.00" />
    </children>
 </AnchorPane>

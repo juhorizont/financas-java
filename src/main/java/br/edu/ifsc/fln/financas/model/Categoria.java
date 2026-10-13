@@ -44,4 +44,10 @@ public class Categoria {
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
     }
+
+    //faz a categoria aparecer o nome, sem ele, o ComboBox mostraria algo tipo Categoria@1a2b3c
+    @Override
+    public String toString() {
+        return nome + " (" + grupo + ")";
+    }
 }

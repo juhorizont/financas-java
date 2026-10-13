@@ -33,6 +33,9 @@ public class Usuario {
         this.caixinhas = new ArrayList<>();
     }
 
+
+    // ----- Cálculos de receita -----
+
     // Soma o valor de todas as receitas do tipo FIXA (o salario).
     public double calcularRendaFixa() {
         double total = 0;
@@ -44,7 +47,8 @@ public class Usuario {
         return total;
     }
 
-    // soma o valor dos ganhos extras destinados a um grupo (ex: so economia).
+    // Soma o valor dos ganhos EXTRAS destinados a um grupo (ex: so economia).
+    // pergunta que responde: “quanto de extra entrou pra este grupo específico?”
     public double calcularExtraDoGrupo(Grupo grupo) {
         double total = 0;
         for (Receita receita : receitas) {
@@ -55,18 +59,58 @@ public class Usuario {
         return total;
     }
 
-    // limite do grupo = parte da renda fixa + os extras daquele grupo.
-    public double calcularLimiteNecessidades() {
-        return calcularRendaFixa() * 0.50 + calcularExtraDoGrupo(Grupo.NECESSIDADE);
+    // Soma todas as receitas (fixas + extras)
+    public double calcularTotalReceitas() {
+        double total = 0;
+        for (Receita receita : receitas) {
+            total = total + receita.getValor();
+        }
+        return total;
     }
 
-    public double calcularLimiteDesejos() {
-        return calcularRendaFixa() * 0.30 + calcularExtraDoGrupo(Grupo.DESEJO);
+    // ----- Cálculos de despesa -----
+
+    // soma o valor de todas as despesas
+    public double calcularTotalDespesas() {
+        double total = 0;
+        for (Despesa despesa : despesas) {
+            total = total + despesa.getValor();
+        }
+        return total;
     }
 
-    public double calcularLimitePoupanca() {
-        return calcularRendaFixa() * 0.20 + calcularExtraDoGrupo(Grupo.ECONOMIA);
+    //ele responde “quanto eu JÁ gastei neste grupo”?
+    public double calcularGastoDoGrupo(Grupo grupo) {
+        double total = 0;
+        for (Despesa despesa : despesas) {
+            if (despesa.getCategoria().getGrupo() == grupo) {
+                total = total + despesa.getValor();
+            }
+        }
+        return total;
     }
+
+    // ----- Cálculos do 50/30/20 -----
+
+    // limite do grupo = parte da renda fixa + os extras daquele grupo
+    //responde “quanto eu POSSO gastar neste grupo"?
+    public double calcularLimiteDoGrupo(Grupo grupo) {
+        double percentual = 0;
+        if (grupo == Grupo.NECESSIDADE) {
+            percentual = 0.50;
+        } else if (grupo == Grupo.DESEJO) {
+            percentual = 0.30;
+        } else if (grupo == Grupo.ECONOMIA) {
+            percentual = 0.20;
+        }
+        return calcularRendaFixa() * percentual + calcularExtraDoGrupo(grupo);
+    }
+
+    // quanto sobrou da renda depois das despesas (vai pra economia).
+    public double calcularSobra() {
+        return calcularTotalReceitas() - calcularTotalDespesas();
+    }
+
 
     // adicionam um item na lista do usuario.
     public void adicionarReceita(Receita receita) {
