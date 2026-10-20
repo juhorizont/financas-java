@@ -70,4 +70,9 @@ public class Despesa {
     public void setStatus(StatusDespesa status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return descricao + " - R$ " + valor;
+    }
 }

@@ -22,7 +22,7 @@ public class ReceitaController {
     @FXML private ComboBox<ReceitaTipo> cbTipo;
     @FXML private ComboBox<Grupo> cbGrupo;
     @FXML private Button btSalvarReceita;
-    @FXML private ListView<String> lvReceitas;
+    @FXML private ListView<Receita> lvReceitas;
     @FXML private Label lblTotalRendas;
 
     @FXML
@@ -105,7 +105,7 @@ public class ReceitaController {
     private void atualizarLista() {
         lvReceitas.getItems().clear();
         for (Receita receita : HelloApplication.usuarioAtual.getReceitas()) {
-            lvReceitas.getItems().add(receita.getNome() + " - R$ " + receita.getValor() + " (" + receita.getTipo() + ")");
+            lvReceitas.getItems().add(receita);
         }
         lblTotalRendas.setText("Total das rendas: R$ " + HelloApplication.usuarioAtual.calcularTotalReceitas());
     }

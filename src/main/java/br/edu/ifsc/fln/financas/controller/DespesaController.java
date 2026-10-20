@@ -23,7 +23,7 @@ public class DespesaController {
     @FXML private ComboBox<Categoria> cbCategoria;
     @FXML private ComboBox<StatusDespesa> cbStatus;
     @FXML private Button btSalvarDespesa;
-    @FXML private ListView<String> lvDespesas;
+    @FXML private ListView<Despesa> lvDespesas;
     @FXML private Label lblTotalDespesas;
 
     @FXML
@@ -114,7 +114,7 @@ public class DespesaController {
     private void atualizarLista() {
         lvDespesas.getItems().clear();
         for (Despesa despesa : HelloApplication.usuarioAtual.getDespesas()) {
-            lvDespesas.getItems().add(despesa.getDescricao() + " - R$ " + despesa.getValor());
+            lvDespesas.getItems().add(despesa);
         }
         lblTotalDespesas.setText("Total das despesas: R$ " + HelloApplication.usuarioAtual.calcularTotalDespesas());
     }

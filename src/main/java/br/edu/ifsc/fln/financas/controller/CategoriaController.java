@@ -15,7 +15,7 @@ public class CategoriaController {
     @FXML private TextField tfNomeCategoria;
     @FXML private ComboBox<Grupo> cbSelecionarGrupo;
     @FXML private Button btSalvar;
-    @FXML private ListView<String> lvListaCategoria;
+    @FXML private ListView<Categoria> lvListaCategoria;
 
     // roda quando a tela abre
     @FXML
@@ -62,9 +62,9 @@ public class CategoriaController {
 
     // recarrega a lista a partir do DAO
     private void atualizarLista() {
-        lvListaCategoria.getItems().clear();
-        for (Categoria categoria : HelloApplication.categoriaDAO.listar()) {
-            lvListaCategoria.getItems().add(categoria.getNome() + " (" + categoria.getGrupo() + ")");
+        lvListaCategoria.getItems().clear(); //limpa a lista pra nao repetir as categorias quando carrega
+        for (Categoria categoria : HelloApplication.categoriaDAO.listar()) { // pega as categorias guardadas (as fixas + as criadas)
+            lvListaCategoria.getItems().add(categoria); //guarda a Categoria; a tela mostra "Nome (GRUPO)" pelo toString dela
         }
     }
 
